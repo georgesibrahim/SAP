@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP Fiori-like Employee Management System</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #006699; /* Updated color to match SAP blue */
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Add relative positioning to ensure child positioning works */
+            z-index: 1;
+        }
+        .navbar h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        .logo {
+            position: absolute; /* Absolute position the logo */
+            top: -30px; /* Adjust the top margin to move it above the navbar */
+            left: 20px; /* Adjust this value to your preference */
+            z-index: 10; /* Ensure it sits above other content */
+        }
+        .logo img {
+            height: 80px; /* Adjust the logo size */
+            display: block;
+        }
+        .navbar .user-info {
+            font-size: 0.9rem;
+        }
+        .sidebar {
+            background-color: #003b5c;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 30px;
+            color: #fff;
+        }
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .sidebar a:hover {
+            background-color: #004b6b;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 30px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #006699;
+        }
+        .employee-section, .payroll-section {
+            margin-top: 20px;
+        }
+        .employee-info, .payroll-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .employee-info th, .payroll-table th {
+            background-color: #f4f4f4;
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .employee-info td, .payroll-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .payroll-table th, .payroll-table td {
+            text-align: center;
+        }
+        .action-btn {
+            background-color: #006699;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .action-btn:hover {
+            background-color: #004b6b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div>
+             <img src="SAP.png" alt="SAP Logo" height=40px>
+        </div>
+        <div class="user-info">
+            <p>Logged in as: <strong>Admin</strong></p>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#employee-info">Employee Info</a>
+        <a href="#payroll">Payroll</a>
+        <a href="#leave-requests">Leave Requests</a>
+        <a href="#performance">Performance</a>
+        <a href="#settings">Settings</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+
+        <!-- Employee Info Section -->
+        <div id="employee-info" class="card employee-section">
+            <h2>Employee Information</h2>
+            <table class="employee-info">
+                <tr>
+                    <th>ID No</th>
+                    <td>29225000295</td>
+                </tr>
+                <tr>
+                    <th>Full Name</th>
+                    <td>Geirges Ibrahim</td>
+                </tr>
+                <tr>
+                    <th>Department</th>
+                    <td>Engineering</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>Georges.Ibrahim@intalio.com</td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td>66926950</td>
+                </tr>
+                <tr>
+                    <th>Date of Joining</th>
+                    <td>01-Jan-2020</td>
+                </tr>
+                <tr>
+                    <th>Manager</th>
+                    <td>Marie-Therese AMMOUN</td>
+                </tr>
+            </table>
+            <button class="action-btn">Edit Information</button>
+        </div>
+
+        <!-- Payroll Section -->
+        <div id="payroll" class="card payroll-section">
+            <h2>Payroll Details</h2>
+            <table class="payroll-table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Basic Salary</th>
+                        <th>Bonus</th>
+                        <th>Meals Consumed</th>
+                        <th>Meal Deduction</th>
+                        <th>Deductions</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>$3,000</td>
+                        <td>$200</td>
+                        <td>20 meals</td>
+                        <td>-$100</td> <!-- Example of $5 per meal -->
+                        <td>$100</td>
+                        <td>$3,000</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>$3,000</td>
+                        <td>$150</td>
+                        <td>20 meals</td>
+                        <td>-$100</td>
+                        <td>$120</td>
+                        <td>$2,930</td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>$3,000</td>
+                        <td>$100</td>
+                        <td>20 meals</td>
+                        <td>-$100</td>
+                        <td>$90</td>
+                        <td>$2,910</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="action-btn">View Full Payroll</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
